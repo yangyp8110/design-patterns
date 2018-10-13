@@ -4,7 +4,9 @@ import org.junit.Test;
 import proxy.commonproxy.Cooker;
 import proxy.commonproxy.CookerProxy;
 import proxy.commonproxy.ICook;
+import proxy.dynamicproxy.CookerDynamicProxy;
 import proxy.dynamicproxy.CookerHandler;
+import proxy.dynamicproxy.DynamicProxy;
 
 import java.lang.reflect.Proxy;
 
@@ -69,5 +71,14 @@ public class ProxyTest {
         proxyInstance.washFood();
         proxyInstance.cutFood();
         proxyInstance.stirFood();
+    }
+
+    @Test
+    public void dynamicProxy2(){
+        proxy.dynamicproxy.ICook cooker = new proxy.dynamicproxy.Cooker();
+        proxy.dynamicproxy.ICook cookDynamicProxy = CookerDynamicProxy.newProxyInstance(cooker);
+        cookDynamicProxy.cutFood();
+        cookDynamicProxy.washFood();
+        cookDynamicProxy.stirFood();
     }
 }

@@ -7,8 +7,6 @@ import java.lang.reflect.Method;
  * Created by mr.yang on 2018/10/7.
  */
 public class CookerHandler implements InvocationHandler {
-    Class clazz = null;
-
     Object obj = null;
 
     public CookerHandler(Object _obj) {
